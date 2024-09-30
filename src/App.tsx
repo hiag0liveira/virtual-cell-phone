@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PhoneFrame from "./PhoneFrame"; // Importa o componente PhoneFrame
 
 interface PhoneSize {
@@ -7,6 +7,9 @@ interface PhoneSize {
 }
 
 function App() {
+  useEffect(() => {
+    document.body.style.zoom = "67%";
+  }, []);
   const [phoneType, setPhoneType] = useState("iPhone 12");
 
   const phoneSizes: { [key: string]: PhoneSize } = {
