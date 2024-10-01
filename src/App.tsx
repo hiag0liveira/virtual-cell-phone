@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import domtoimage from "dom-to-image";
 import PhoneFrame from "./PhoneFrame";
 
 interface PhoneSize {
@@ -21,11 +20,19 @@ function App() {
       "iPhone 12": { width: "390px", height: "844px" },
       "iPhone SE": { width: "375px", height: "667px" },
       "iPhone 13 Pro Max": { width: "430px", height: "932px" },
+      "iPhone X": { width: "375px", height: "812px" },
+      "iPhone 8 Plus": { width: "414px", height: "736px" },
+      "iPhone 14 Pro": { width: "430px", height: "932px" },
+      "iPhone 14": { width: "393px", height: "852px" },
     },
     Android: {
       "Galaxy S21": { width: "412px", height: "915px" },
       "Pixel 5": { width: "393px", height: "851px" },
       "OnePlus 9": { width: "412px", height: "915px" },
+      "Galaxy Note 20": { width: "412px", height: "915px" },
+      "Xiaomi Mi 11": { width: "409px", height: "917px" },
+      "Galaxy S22": { width: "450px", height: "916px" },
+      "Pixel 6": { width: "411px", height: "897px" },
     },
   };
 
@@ -44,23 +51,6 @@ function App() {
     setOrientation((prevOrientation) =>
       prevOrientation === "portrait" ? "landscape" : "portrait"
     );
-  };
-
-  const handleScreenshot = () => {
-    const phoneFrameElement = document.getElementById("phone-frame");
-    if (phoneFrameElement) {
-      domtoimage
-        .toPng(phoneFrameElement)
-        .then((dataUrl) => {
-          const link = document.createElement("a");
-          link.download = "phone-screenshot.png";
-          link.href = dataUrl;
-          link.click();
-        })
-        .catch((error) => {
-          console.error("Error taking screenshot", error);
-        });
-    }
   };
 
   const adjustedSize =
@@ -109,13 +99,6 @@ function App() {
         >
           Alternar Orientação (
           {orientation === "portrait" ? "Retrato" : "Paisagem"})
-        </button>
-
-        <button
-          onClick={handleScreenshot}
-          className="bg-green-500 text-white p-2 rounded w-full"
-        >
-          Tirar Screenshot
         </button>
       </div>
       <div id="phone-frame">
