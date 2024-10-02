@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface AppData {
   name: string;
@@ -8,9 +9,7 @@ interface AppData {
 
 const Home: React.FC = () => {
   const [apps, setApps] = useState<AppData[]>([]);
-  const [selectedApp, setSelectedApp] = useState<AppData | null>(null);
-  const [isHome, setIsHome] = useState<boolean>(true); // Adicionado estado para controlar a tela inicial
-
+  const navigate = useNavigate();
   useEffect(() => {
     const loadApps = async () => {
       try {
@@ -26,26 +25,8 @@ const Home: React.FC = () => {
   }, []);
 
   const handleOpenApp = (app: AppData) => {
-    setSelectedApp(app);
-    setIsHome(false); // Altera para não estar na tela inicial
+    navigate(`/app/${app.name}`);
   };
-
-  const handleBackToHome = () => {
-    setSelectedApp(null);
-    setIsHome(true); // Retorna à tela inicial
-  };
-
-  if (!isHome && selectedApp) {
-    return (
-      <div className="w-full h-full flex flex-col">
-        <iframe
-          src={selectedApp.link}
-          title={selectedApp.name}
-          className="flex-grow"
-        />
-      </div>
-    );
-  }
 
   return (
     <div className="grid grid-cols-2 gap-4">
