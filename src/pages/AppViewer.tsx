@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 interface AppData {
   name: string;
@@ -9,7 +9,6 @@ interface AppData {
 const AppViewer: React.FC = () => {
   const { appName } = useParams<{ appName: string }>();
   const [app, setApp] = useState<AppData | null>(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const loadApps = async () => {
@@ -26,24 +25,12 @@ const AppViewer: React.FC = () => {
     loadApps();
   }, [appName]);
 
-  const handleBack = () => {
-    navigate(-1);
-  };
-
-  const handleHome = () => {
-    navigate("/");
-  };
-
   if (!app) {
     return <div>App não encontrado</div>;
   }
 
   return (
     <div className="w-full h-full flex flex-col">
-      <div className="flex justify-between p-4 bg-gray-800 text-white">
-        <button onClick={handleBack}>Voltar</button>
-        <button onClick={handleHome}>Home</button>
-      </div>
       <iframe src={app.link} title={app.name} className="flex-grow" />
     </div>
   );

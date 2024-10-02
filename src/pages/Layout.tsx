@@ -159,7 +159,7 @@ const Layout: React.FC = () => {
             height: adjustedSize.height,
             backgroundImage: backgroundImage
               ? `url(${backgroundImage})`
-              : "none", // Removendo o fundo se vazio
+              : "none",
           }}
         >
           <Header />
