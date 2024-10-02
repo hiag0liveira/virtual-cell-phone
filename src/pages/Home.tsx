@@ -29,7 +29,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-4 gap-4 h-full w-auto mt-24">
       {apps.map((app) => (
         <div
           key={app.name}
@@ -39,7 +39,7 @@ const Home: React.FC = () => {
           <img
             src={app.icon}
             alt={app.name}
-            className="w-16 h-16 mx-auto mb-2"
+            className="w-16 h-16 mx-auto rounded-lg mb-2"
           />
           <p>{app.name}</p>
         </div>

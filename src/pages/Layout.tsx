@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -166,7 +166,6 @@ const Layout: React.FC = () => {
           <div className="flex-grow">
             <Outlet />
           </div>
-
           <Footer />
         </div>
       </div>
