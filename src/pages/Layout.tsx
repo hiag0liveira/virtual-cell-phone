@@ -163,7 +163,7 @@ const Layout: React.FC = () => {
           }}
         >
           <Header />
-          <div className="flex-grow">
+          <div className="flex-grow overflow-auto">
             <Outlet />
           </div>
           <Footer />

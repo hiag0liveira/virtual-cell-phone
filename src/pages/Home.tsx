@@ -29,7 +29,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-4 gap-4 h-full w-auto mt-24">
+    <div className="grid grid-cols-4 gap-2 h-64 items-end mt-28">
       {apps.map((app) => (
         <div
           key={app.name}
