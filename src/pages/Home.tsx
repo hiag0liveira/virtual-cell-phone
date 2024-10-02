@@ -9,6 +9,7 @@ interface AppData {
 const Home: React.FC = () => {
   const [apps, setApps] = useState<AppData[]>([]);
   const [selectedApp, setSelectedApp] = useState<AppData | null>(null);
+  const [isHome, setIsHome] = useState<boolean>(true); // Adicionado estado para controlar a tela inicial
 
   useEffect(() => {
     const loadApps = async () => {
@@ -26,9 +27,15 @@ const Home: React.FC = () => {
 
   const handleOpenApp = (app: AppData) => {
     setSelectedApp(app);
+    setIsHome(false); // Altera para não estar na tela inicial
   };
 
-  if (selectedApp) {
+  const handleBackToHome = () => {
+    setSelectedApp(null);
+    setIsHome(true); // Retorna à tela inicial
+  };
+
+  if (!isHome && selectedApp) {
     return (
       <div className="w-full h-full flex flex-col">
         <iframe
