@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
 
       <button
         className="text-white flex flex-col items-center"
-        onClick={() => console.log("Abrir abas")}
+        onClick={() => navigate("/recent-models")}
       >
         <FaSquare size={15} />
       </button>

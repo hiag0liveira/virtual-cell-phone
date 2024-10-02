@@ -2,6 +2,19 @@
     {
         "name": "To-do",
         "link": "https://todo-xarr.onrender.com/",
-        "icon": "/icons/todo.png"
+        "icon": "/icons/todo.png",
+        "screen": "/screens/todo.png"
+    },
+    {
+        "name": "To-do2",
+        "link": "https://todo-xarr.onrender.com/",
+        "icon": "/icons/todo.png",
+        "screen": "/screens/todo2.png"
+    },
+    {
+        "name": "To-do3",
+        "link": "https://todo-xarr.onrender.com/",
+        "icon": "/icons/todo.png",
+        "screen": "/screens/todo3.png"
     }
 ]

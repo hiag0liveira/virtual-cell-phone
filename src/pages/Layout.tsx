@@ -97,7 +97,7 @@ const Layout: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-900 pb-20 font-roboto text-white flex flex-col justify-between">
       <div className="w-full h-full flex justify-center mt-6">
-        <div className="mr-8">
+        <div className="mr-8 ">
           <label htmlFor="device-select" className="block mb-2">
             Escolha o tipo de dispositivo:
           </label>
@@ -105,7 +105,7 @@ const Layout: React.FC = () => {
             id="device-select"
             value={deviceType}
             onChange={handleDeviceTypeChange}
-            className="border p-2 text-black rounded mb-4"
+            className="border p-2 w-full text-black rounded mb-4"
           >
             <option value="iPhone">iPhone</option>
             <option value="Android">Android</option>
@@ -118,7 +118,7 @@ const Layout: React.FC = () => {
             id="phone-select"
             value={phoneType}
             onChange={handlePhoneChange}
-            className="border p-2 text-black rounded mb-4"
+            className="border p-2 w-full text-black rounded mb-4"
           >
             {Object.keys(phoneSizes).map((phone) => (
               <option key={phone} value={phone}>
@@ -133,7 +133,7 @@ const Layout: React.FC = () => {
           <select
             id="background-select"
             onChange={handleBackgroundChange}
-            className="border p-2 text-black rounded mb-4"
+            className="border p-2 w-full text-black rounded mb-4"
           >
             <option value="none">Nenhum Papel de Parede</option>{" "}
             <option value="bg1">Papel de Parede 1</option>
