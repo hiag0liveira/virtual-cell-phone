@@ -36,7 +36,9 @@ const RecentModels: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col items-center">
+    <div
+      className={`w-full h-full flex flex-col items-center scrollbar-hidden ${styles.animateSlideUp}`}
+    >
       <h1 className="text-white text-xl mb-2">Apps Models</h1>
       <div className={styles.carousel}>
         <div className={styles.carouselInner}>
