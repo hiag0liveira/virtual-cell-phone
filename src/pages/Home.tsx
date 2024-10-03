@@ -29,11 +29,11 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-4 gap-2 h-64 items-end mt-28">
+    <div className="grid grid-cols-4 gap-2  h-full items-end ">
       {apps.map((app) => (
         <div
           key={app.name}
-          className="text-center cursor-pointer"
+          className="text-center cursor-pointer mt-24"
           onClick={() => handleOpenApp(app)}
         >
           <img
