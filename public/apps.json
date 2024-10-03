@@ -9,6 +9,6 @@
         "name": "Calculadora",
         "link": "https://calculator-flutter.vercel.app/",
         "icon": "/icons/calculadora.png",
-        "screen": "/screens/todo.png"
+        "screen": "/screens/calculadora.png"
     }
 ]
