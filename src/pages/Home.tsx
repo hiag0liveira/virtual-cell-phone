@@ -5,6 +5,7 @@ interface AppData {
   name: string;
   link: string;
   icon: string;
+  screen: string;
 }
 
 const Home: React.FC = () => {
@@ -32,7 +33,21 @@ const Home: React.FC = () => {
     loadApps();
   }, []);
 
+  const saveAppToCache = (app: AppData) => {
+    const cache = localStorage.getItem("recentApps");
+    const recentApps = cache ? JSON.parse(cache) : [];
+
+    const exists = recentApps.find(
+      (cachedApp: AppData) => cachedApp.name === app.name
+    );
+
+    if (!exists) {
+      localStorage.setItem("recentApps", JSON.stringify([app, ...recentApps]));
+    }
+  };
+
   const handleOpenApp = (app: AppData) => {
+    saveAppToCache(app); // Salva no cache quando o app for aberto
     navigate(`/app/${app.name}`);
   };
 
