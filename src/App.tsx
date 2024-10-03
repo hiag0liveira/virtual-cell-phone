@@ -6,6 +6,7 @@ function App() {
   useEffect(() => {
     document.body.style.zoom = "67%";
   }, []);
+
   return (
     <div className="w-full h-full ">
       <RouterProvider router={router} />
