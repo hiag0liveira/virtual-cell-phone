@@ -8,6 +8,7 @@ import bg3 from "../assets/bg3.jpg";
 import bg4 from "../assets/bg4.jpg";
 import bg5 from "../assets/bg5.jpg";
 import bg6 from "../assets/bg6.jpg";
+import FooterPage from "../components/FooterPage";
 
 interface PhoneSize {
   width: string;
@@ -169,6 +170,7 @@ const Layout: React.FC = () => {
           <Footer />
         </div>
       </div>
+      <FooterPage />
     </div>
   );
 };
