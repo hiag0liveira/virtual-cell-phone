@@ -25,7 +25,7 @@
   },
   {
     "name": "Taski",
-    "link": "http://taski-to-do.vercel.app/",
+    "link": "https://taski-to-do.vercel.app/",
     "icon": "/icons/taski.png",
     "screen": "/screens/taski_todo.png"
   }
